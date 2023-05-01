@@ -9,9 +9,9 @@ import (
 
 type IPayementRepository interface {
 	UpdatePayment(id string, payment models.Payment) (models.Payment, error)
-	Delete(id string) (int64, error)
+	DeletePayment(id string) (int64, error)
 	SelectPaymentWithId(id string) (models.Payment, error)
-	CreatePayment(payment models.Payment) int64
+	CreatePayment(payment models.Payment) (int64, error)
 }
 
 type Repository struct {
